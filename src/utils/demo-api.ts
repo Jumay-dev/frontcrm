@@ -132,19 +132,33 @@ export function deleteData(action: string): Promise<TODO> {
 
 export function login(_action: string, data: TODO): Promise<TODO> {
   return new Promise(function (resolve, _reject) {
-    if (data.username === "admin@test.com" && data.password === "password") {
-      const { accessToken: accessToken, user } = ds.token;
-      setTimeout(resolve, 200, {
-        data: {
-          accessToken: accessToken,
-          user,
-        },
-      });
-    } else {
-      _reject({
-        code: 403,
-        text: "Your name or password is wrong",
-      });
-    }
+        
+    const formData = new FormData()
+    formData.append('email', data.username)
+    formData.append('password', data.password)
+    fetch(`http://127.0.0.1:8000/api/auth/login`, {
+      method: "POST",
+      body: formData,
+      headers: {
+
+      }
+    })
+    .then(res => res.json())
+    .then(res => {
+      console.log('login-res', res.token.original["access_token"])
+      if (res.success) {
+        setTimeout(resolve, 200, {
+          data: {
+            accessToken: res.token.original["access_token"],
+            user: res.user,
+          },
+        });
+      } else {
+        _reject({
+          code: 403,
+          text: "Your name or password is wrong",
+        });
+      }
+    })
   });
 }

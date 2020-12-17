@@ -3,13 +3,13 @@
     <v-flex xs12 sm6 md4 lg3>
       <v-card class="mt-0 pt-0" elevation="2">
         <v-card-title class="blue darken-1">
-          <h4 style="color:white">Vue-CRM 2.0</h4>
+          <h4 style="color:white">DS.Med система регистрации диллеров</h4>
         </v-card-title>
         <v-card-text class="mt-10">
           <form @submit.prevent="login">
             <v-layout row wrap>
               <v-flex xs12 md4>
-                <v-subheader>User ID</v-subheader>
+                <v-subheader>e-mail</v-subheader>
               </v-flex>
               <v-flex xs12 md8>
                 <v-text-field
@@ -23,7 +23,7 @@
             </v-layout>
             <v-layout row wrap>
               <v-flex xs12 md4>
-                <v-subheader>Password</v-subheader>
+                <v-subheader>Пароль</v-subheader>
               </v-flex>
               <v-flex xs12 md8>
                 <v-text-field
@@ -37,7 +37,7 @@
               </v-flex>
             </v-layout>
             <v-card-actions>
-              <v-btn   elevation="4" type="submit">login</v-btn>
+              <v-btn   elevation="4" type="submit">Войти</v-btn>
             </v-card-actions>
             <v-snackbar
               v-if="error"
@@ -49,7 +49,7 @@
             >
               {{ text }}
               <v-btn class="pink--text" text @click.native="error = false"
-                >Close</v-btn
+                >Закрыть</v-btn
               >
             </v-snackbar>
           </form>
