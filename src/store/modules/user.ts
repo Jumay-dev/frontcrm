@@ -68,9 +68,15 @@ class UserModule extends VuexModule implements UserState {
   @Action({ rawError: true })
   public async signIn(userInfo: { username: string; password: string }) {
     const { username, password } = userInfo;
-    const { data } = await login("login", { username, password });
-    this.setToken(data.accessToken);
-    this.setUser(data.user);
+    try {
+      const { data } = await login("login", { username, password })
+      setToken(data.accessToken);
+      setUser(data.user);
+    }
+    catch {
+      console.log('error');
+    }
+    
   }
 
   @Action({ rawError: true })

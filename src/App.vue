@@ -57,12 +57,17 @@
         <div class="text-xs-center pr-3 mt-2">
           <v-badge left="">
             <span slot="badge">6</span>
-            <v-icon large color="grey lighten-1">mdi-bell-outline</v-icon>
+            <v-btn style="padding: 0px">
+              <v-icon large color="grey lighten-1">mdi-bell-outline</v-icon>
+            </v-btn>
           </v-badge>
 
-          <v-badge color="red">
-            <span slot="badge">!</span>
-            <v-icon large color="grey">mdi-email-outline</v-icon>
+          <v-badge color="red" style="margin-left: 10px">
+            <v-btn style="padding: 0">
+              <span>Запросы авторизации</span>
+              <v-icon large color="grey">mdi-email-outline</v-icon>
+            </v-btn>
+            <span slot="badge">4</span>
           </v-badge>
         </div>
 

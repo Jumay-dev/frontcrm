@@ -143,14 +143,19 @@ export function login(_action: string, data: TODO): Promise<TODO> {
     })
     .then(res => res.json())
     .then(res => {
-      console.log('login-res', res)
       if (res.success) {
-        setTimeout(resolve, 200, {
+        // setTimeout(resolve, 200, {
+        //   data: {
+        //     accessToken: res.token.original["access_token"],
+        //     user: res.user,
+        //   },
+        // });
+        resolve({
           data: {
             accessToken: res.token.original["access_token"],
             user: res.user,
           },
-        });
+        })
       } else {
         _reject({
           code: 403,
@@ -158,5 +163,6 @@ export function login(_action: string, data: TODO): Promise<TODO> {
         });
       }
     })
+    .catch(res => console.log(res))
   });
 }

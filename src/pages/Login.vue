@@ -75,8 +75,8 @@ export default class Login extends Vue {
   }
 
   public async login() {
-    await userModule.signIn({ username: this.email, password: this.pass });
-    this.$router.push("/");
+    await userModule.signIn({ username: this.email, password: this.pass })
+    this.$router.push("/")
   }
 }
 </script>
