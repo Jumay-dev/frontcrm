@@ -12,6 +12,61 @@
         </v-card-title>
         <Table v-if="loading === false" :headers="headers" :items="items" :pagination="pagination" @edit="edit" @remove="remove"></Table>
       </v-card>
+      <v-card
+        elevation="2"
+      >
+        <div style="padding: 10px; background: blue; color: white">Проект № 2236 зарегистрирован 08-04-2019 (14:08)</div>
+        <div class="d-flex flex-row">
+          <div class="d-flex flex-column">
+            <div>Дилер: ООО "ААА"</div>
+            <div>Менеджер: Иванов Иван Иванович</div>
+            <div>Конечный клиент</div>
+            <div>Наименование: ООО "ЭЭЭ"</div>
+            <div>ИНН: 123456789</div>
+            <div>Адрес(а): ул. Пушкина, дом Колотушкина</div>
+            <div>Комментарий</div>
+          </div>
+          <div class="d-flex flex-column">
+            <template>
+              <v-simple-table>
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th class="text-left">
+                        Оборудование
+                      </th>
+                      <th class="text-left">
+                        Статус
+                      </th>
+                      <th class="text-left">
+                        <v-checkbox></v-checkbox>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ЛОР-комбайн</td>
+                      <td>Авторизация прекращена</td>
+                      <td><v-checkbox></v-checkbox></td>
+                    </tr>
+                    <tr>
+                      <td>ЛОР-комбайн</td>
+                      <td>Авторизация прекращена</td>
+                      <td><v-checkbox></v-checkbox></td>
+                    </tr>
+                    <tr>
+                      <td>ЛОР-комбайн</td>
+                      <td>Авторизация прекращена</td>
+                      <td><v-checkbox></v-checkbox></td>
+                    </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+            </template>
+            <v-btn>Изменить</v-btn>
+          </div>
+        </div>
+      </v-card>
     </v-flex>
     <search-panel :rightDrawer="rightDrawer" @cancelSearch="cancelSearch" @searchData="searchOrders">
       <v-layout row>

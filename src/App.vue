@@ -130,7 +130,7 @@ export default class App extends Vue {
     },
     {
       icon: 'mdi-account-group',
-      title: 'Мои дилеры',
+      title: 'Мои менеджеры',
       vertical: 'Customer',
       link: 'customers'
     },

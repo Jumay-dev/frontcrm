@@ -25,10 +25,10 @@
                     <v-flex md4 sm12 xs12 class="mx-1 px-0">
                       <v-text-field
                         name="firstname"
-                        label="First Name"
-                        hint="Last name is required"
+                        label="Имя"
+                        hint="Обязательное поле"
                         value="Input text"
-                        v-model="customer.firstname"
+                        v-model="customer.name"
                         class="input-group--focused"
                         required
                       ></v-text-field>
@@ -36,13 +36,23 @@
                     <v-flex md4 sm12 class="mx-1 px-0">
                       <v-text-field
                         name="lastname"
-                        label="Last Name"
+                        label="Фамилия"
                         maxlength="10"
-                        hint="Last name is required"
+                        hint="Обязательное поле"
                         value="Input text"
-                        v-model="customer.lastname"
+                        v-model="customer.surname"
                         class="input-group--focused"
                         required
+                      ></v-text-field>
+                    </v-flex>
+                    <v-flex md4 sm12 class="mx-1 px-0">
+                      <v-text-field
+                        name="lastname"
+                        label="Отчество"
+                        maxlength="10"
+                        value="Input text"
+                        v-model="customer.patronymic"
+                        class="input-group--focused"
                       ></v-text-field>
                     </v-flex>
                     <v-flex md4 sm12 xs12 class="mx-1 px-0">
@@ -61,30 +71,8 @@
                       <v-text-field
                         name="mobile"
                         type="text"
-                        label="Mobile"
+                        label="Мобильный"
                         v-model="customer.mobile"
-                        class="input-group--focused"
-                        required
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex md4 sm12 class="mx-1 px-0">
-                      <v-text-field
-                        name="workphone"
-                        type="text"
-                        label="Work Phone"
-                        v-model="customer.workphone"
-                        class="input-group--focused"
-                        required
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex md4 sm12 xs12 class="mx-1 px-0">
-                      <v-text-field
-                        name="rewards"
-                        type="number"
-                        label="Rewards"
-                        hint="number between 0 and 9999"
-                        v-bind:rules="rules.rewards"
-                        v-model="customer.rewards"
                         class="input-group--focused"
                         required
                       ></v-text-field>

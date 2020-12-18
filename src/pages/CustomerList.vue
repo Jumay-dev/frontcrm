@@ -4,7 +4,7 @@
       <v-card>
         <v-card-title>
           <span class="title"
-            >Мои диллеры {{ pagination ? "(" + pagination.totalItems + ")" : "" }}
+            >Мои менеджеры {{ pagination ? "(" + pagination.totalItems + ")" : "" }}
           </span>
           <v-spacer></v-spacer>
           <table-header-buttons
@@ -32,7 +32,7 @@
         <v-flex xs11 offset-xs1>
           <v-text-field
             name="input-1-3"
-            label="Frist Name"
+            label="Имя"
             light
             v-model="searchFilter.contain.firstname"
           ></v-text-field>
@@ -42,7 +42,7 @@
         <v-flex xs11 offset-xs1>
           <v-text-field
             name="input-1-3"
-            label="Last Name"
+            label="Фамилия"
             light
             v-model="searchFilter.contain.lastname"
           ></v-text-field>
@@ -52,7 +52,7 @@
         <v-flex xs11 offset-xs1>
           <v-text-field
             name="input-1-3"
-            label="Mobile"
+            label="Телефон"
             light
             v-model="searchFilter.contain.mobile"
           ></v-text-field>
@@ -129,13 +129,13 @@ export default class CustomerList extends Vue {
       sortable: false
     },
     {
-      text: "First Name",
+      text: "Имя",
       left: true,
       value: "firstname"
     },
-    { text: "Last Name", value: "lastname" },
+    { text: "Фамилия", value: "lastname" },
     { text: "Email", value: "email" },
-    { text: "Mobile", value: "mobile" },
+    { text: "Телефон", value: "mobile" },
     { text: "Reward", value: "rewards" },
     { text: "Membership", value: "membership" },
     { text: "", value: "actions", sortable: false }

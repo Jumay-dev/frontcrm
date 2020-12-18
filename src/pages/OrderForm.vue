@@ -349,12 +349,12 @@ categoryChanged(newId: number, oldId: number){
 
   mounted() {
     if (this.$route.params.id) {
-      this.title = 'Edit Order';
+      this.title = 'Редактирование проекта';
       this.$nextTick(() => {
         // this.shippedDate = this.order.shippedDate;
         // this.orderDate = this.order.orderDate;
       });
-    } else this.title = 'New Order';
+    } else this.title = 'Новый проект';
   }
 }
 </script>
