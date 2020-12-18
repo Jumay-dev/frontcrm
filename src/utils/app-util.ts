@@ -40,8 +40,23 @@ export function getToken(): string {
 export function getUser(): User {
   let user = {} as User;
   if (sessionStorage) {
+    console.log(sessionStorage)
     const userData = sessionStorage.getItem(SESSION_USER_KEY);
     user = userData ? (JSON.parse(userData) as User) : ({} as User);
+    // const formData = new FormData()
+    // formData.append('token', SESSION_TOKEN_KEY)
+    // fetch(`http://127.0.0.1:8000/api/auth/me`, {
+    //   method: "POST",
+    //   body: formData,
+    //   headers: {}
+    // })
+    // .then(res => res.json())
+    // .then(res => {
+    //   console.log('user', res)
+    //   const userData = res
+    //   user = userData ? (JSON.parse(userData) as User) : ({} as User);
+    // })
+    
   }
   return user;
 }

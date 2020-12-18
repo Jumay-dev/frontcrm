@@ -4,7 +4,7 @@
       <v-card>
         <v-card-title>
           <span class="title"
-            >Orders {{ pagination ? '(' + pagination.totalItems + ')' : '' }}
+            >Проекты {{ pagination ? '(' + pagination.totalItems + ')' : '' }}
           </span>
           <v-spacer></v-spacer>
          <table-header-buttons :add="add" :reloadData="reloadData" :updateSearchPanel="updateSearchPanel"></table-header-buttons>

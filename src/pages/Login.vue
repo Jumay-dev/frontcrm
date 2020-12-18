@@ -65,8 +65,8 @@ import { userModule } from "@/store/modules/user";
 
 @Component
 export default class Login extends Vue {
-  private email = "admin@test.com";
-  private pass = "password";
+  private email = "email@email.com";
+  private pass = "102030Abc";
   private error = false;
   private text = "";
 

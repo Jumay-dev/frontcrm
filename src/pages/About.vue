@@ -1,17 +1,13 @@
 <template>
   <v-flex xs12>
-    <p class="text-lg-center display-1">About</p>
+    <p class="text-lg-center display-1">Оборудование</p>
 
     <p class="text-xs-center title">
-      <span class="cyan--text darken-3">Vue CRM App Demo</span>
+      <span class="cyan--text darken-3">DS.Med</span>
     </p>
 
     <p class="text-xs-left subheader">
-      This demo app is not a real application. There is no fake API as back-end
-      service behind the scene. Its advanced search doesn't work properly. Any
-      data update (create or update record) will not be stored after hard
-      refresh or logout. The main purpose of this demo is just a proof of
-      concept.
+      Здесь будет выводиться все оборудование, которое может поставить DS.Med. Подгрузка из Bitrix, в крайнем случае будем добавлять вручную
     </p>
   </v-flex>
 </template>

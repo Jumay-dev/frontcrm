@@ -139,13 +139,11 @@ export function login(_action: string, data: TODO): Promise<TODO> {
     fetch(`http://127.0.0.1:8000/api/auth/login`, {
       method: "POST",
       body: formData,
-      headers: {
-
-      }
+      headers: {}
     })
     .then(res => res.json())
     .then(res => {
-      console.log('login-res', res.token.original["access_token"])
+      console.log('login-res', res)
       if (res.success) {
         setTimeout(resolve, 200, {
           data: {

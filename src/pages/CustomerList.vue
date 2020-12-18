@@ -4,7 +4,7 @@
       <v-card>
         <v-card-title>
           <span class="title"
-            >Customers {{ pagination ? "(" + pagination.totalItems + ")" : "" }}
+            >Мои диллеры {{ pagination ? "(" + pagination.totalItems + ")" : "" }}
           </span>
           <v-spacer></v-spacer>
           <table-header-buttons

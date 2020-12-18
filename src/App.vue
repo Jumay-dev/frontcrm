@@ -12,7 +12,7 @@
               <v-img max-width="2.5em" class="avatar" src="@/assets/avatar0.png" />
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>{{ user.firstname }}{{ user.lastname }}</v-list-item-title>
+              <v-list-item-title>{{ user.name }}</v-list-item-title>
             </v-list-item-content>
             <!-- <v-spacer></v-spacer> -->
             <v-list-item-action style="max-width:1em">
@@ -82,7 +82,7 @@
         </v-container>
       </v-content>
       <v-footer :inset="true" style="justify-content:center; text-align: center" app>
-        <span>&copy; Vue-CRM 2020</span>
+        <span>&copy; DS.Med: Диллеры</span>
       </v-footer>
     </template>
   </v-app>
@@ -113,31 +113,31 @@ export default class App extends Vue {
   private items: AppMenu[] = [
     {
       icon: 'mdi-view-dashboard',
-      title: 'Dashboard',
+      title: 'Статистика',
       vertical: 'Dashboard',
       link: 'dashboard'
     },
     {
       icon: 'mdi-point-of-sale',
-      title: 'Order',
+      title: 'Проектный лист',
       vertical: 'Order',
       link: 'orders'
     },
     {
       icon: 'mdi-account-group',
-      title: 'Customer',
+      title: 'Мои дилеры',
       vertical: 'Customer',
       link: 'customers'
     },
     {
       icon: 'mdi-book-multiple',
-      title: 'Product',
+      title: 'Мои проекты',
       vertical: 'Product',
       link: 'products'
     },
     {
       icon: 'mdi-information-outline',
-      title: 'About',
+      title: 'Оборудование',
       vertical: 'About',
       link: 'about'
     }

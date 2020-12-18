@@ -3,7 +3,7 @@
     <v-flex xs12>
       <v-card>
         <v-card-title>
-          <span class="title">Products {{ pagination ? '(' + pagination.totalItems + ')' : '' }} </span>
+          <span class="title">Мои проекты {{ pagination ? '(' + pagination.totalItems + ')' : '' }} </span>
           <v-spacer></v-spacer>
           <table-header-buttons :add="add" :reloadData="reloadData" :updateSearchPanel="updateSearchPanel"></table-header-buttons>
         </v-card-title>
