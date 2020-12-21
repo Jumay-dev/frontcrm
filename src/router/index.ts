@@ -1,6 +1,13 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import { userModule } from "@/store/modules/user";
+import {
+  isAdmin,
+  isAuthorizator,
+  isDealer,
+  isManager,
+  isGuest
+} from "@/utils/app-util"
 import ErrorPage from "@/components/404.vue";
 import Dashboard from "@/pages/Dashboard.vue";
 import OrderList from "@/pages/OrderList.vue";
@@ -11,6 +18,7 @@ import CustomerForm from "@/pages/CustomerForm.vue";
 import Products from "@/pages/ProductList.vue";
 import ProductForm from "@/pages/ProductForm.vue";
 import Login from "@/pages/Login.vue";
+import UsersList from "@/pages/UsersList.vue";
 import ChangePassword from "@/components/ChangePassword.vue";
 
 function requireAuth(to: TODO, from: TODO, next: TODO) {
@@ -88,6 +96,12 @@ const routes: Array<RouteConfig> = [
     path: "/newproduct",
     component: ProductForm,
     name: "NewProduct",
+    beforeEnter: requireAuth
+  },
+  {
+    path: "/users",
+    component: UsersList,
+    name: "users",
     beforeEnter: requireAuth
   },
   { path: "/login", component: Login, name: "Login" },

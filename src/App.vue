@@ -146,6 +146,13 @@ export default class App extends Vue {
       allowed: ['dealer']
     },
     {
+      icon: 'mdi-account-group',
+      title: 'Пользователи',
+      vertical: 'Пользователи',
+      link: 'users',
+      allowed: ['admin']
+    },
+    {
       icon: 'mdi-book-multiple',
       title: 'Мои проекты',
       vertical: 'Product',
