@@ -23,6 +23,7 @@ export interface User extends Entity {
   mobile: string;
   homephone: string;
   workphone: string;
+  role: Array<string>;
 }
 
 export interface Customer extends User {

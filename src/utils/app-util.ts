@@ -174,3 +174,38 @@ export function isValidEmail(email: string) {
   if (email && !re.test(email)) return "Email is invalid.";
   return true;
 }
+
+export function isAdmin(roles: Array<string>) {
+  if (roles.includes('admin')) {
+    return true
+  }
+  return false
+}
+
+export function isAuthorizator(roles: Array<string>) {
+  if (roles.includes('authorizator')) {
+    return true
+  }
+  return false
+}
+
+export function isDealer(roles: Array<string>) {
+  if (roles.includes('dealer')) {
+    return true
+  }
+  return false
+}
+
+export function isManager(roles: Array<string>) {
+  if (roles.includes('manager')) {
+    return true
+  }
+  return false
+}
+
+export function isGuest(roles: Array<string>) {
+  if (roles.includes('guest')) {
+    return true
+  }
+  return false
+}

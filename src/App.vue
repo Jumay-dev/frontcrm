@@ -96,6 +96,13 @@
 import { Component } from 'vue-property-decorator';
 import Vue from 'vue';
 import { userModule } from '@/store/modules/user';
+import { 
+  isAdmin, 
+  isAuthorizator, 
+  isDealer, 
+  isManager, 
+  isGuest
+  } from '@/utils/app-util'
 
 
 @Component
@@ -115,36 +122,42 @@ export default class App extends Vue {
   private isRootComponent = true;
   public drawer = window.innerWidth > 960;
   private fixed = false;
-  private items: AppMenu[] = [
+  private items: AppMenu[] = []
+  private allItems: AppMenu[] = [
     {
       icon: 'mdi-view-dashboard',
       title: 'Статистика',
       vertical: 'Dashboard',
-      link: 'dashboard'
+      link: 'dashboard',
+      allowed: ['admin', 'dealer', 'manager']
     },
     {
       icon: 'mdi-point-of-sale',
       title: 'Проектный лист',
       vertical: 'Order',
-      link: 'orders'
+      link: 'orders',
+      allowed: ['admin', 'dealer', 'authorizator', 'manager']
     },
     {
       icon: 'mdi-account-group',
       title: 'Мои менеджеры',
       vertical: 'Customer',
-      link: 'customers'
+      link: 'customers',
+      allowed: ['dealer']
     },
     {
       icon: 'mdi-book-multiple',
       title: 'Мои проекты',
       vertical: 'Product',
-      link: 'products'
+      link: 'products',
+      allowed: ['dealer', 'manager']
     },
     {
       icon: 'mdi-information-outline',
       title: 'Оборудование',
       vertical: 'About',
-      link: 'about'
+      link: 'about',
+      allowed: ['admin', 'authorizator']
     }
   ];
 
@@ -215,6 +228,16 @@ export default class App extends Vue {
   }
 
   mounted() {
+    console.log('mounted', userModule.user)
+    this.allItems.forEach( item => {
+      let allow = false
+      userModule.user.role.forEach( role => {
+        if (item.allowed.includes(role)) allow = true
+      })
+      if (allow) {
+        this.items.push(item)
+      }
+    })
   }
 }
 </script>

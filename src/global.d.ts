@@ -35,6 +35,7 @@ type AppMenu = {
     title: string;
     vertical?: string;
     link: string;
+    allowed?: Array<string>;
 }
 
 type TableHeader = {

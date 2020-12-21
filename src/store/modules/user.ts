@@ -32,6 +32,7 @@ class UserModule extends VuexModule implements UserState {
   public searching = "";
   user = getUser();
   token = getToken();
+  role = this.user.role;
 
   public userInfo = {} as UserInfo;
   public signedIn = false;
