@@ -1,4 +1,10 @@
-import { getData, putData, postData, deleteData } from '@/utils/demo-api';
+import { 
+  getData, 
+  putData, 
+  postData, 
+  deleteData,
+  getFromLaravel
+ } from '@/utils/demo-api';
 import { Customer, Order, Entity } from '@/types';
 import { appModule } from './app';
 import { getDefaultPagination, getPagination } from '@/utils/store-util';
@@ -61,6 +67,17 @@ class CustomerModule extends VuexModule implements CustomerState {
       this.setCustomer({} as Customer);
       this.setLoading(false);
     }
+  }
+
+  @Action getAllUsers(): void {
+    this.setLoading(true)
+    getFromLaravel('users/all')
+    .then(res => {
+      console.log('users', res)
+      const users = res.answer
+      this.setDataTable(users)
+      this.setLoading(false)
+    })
   }
 
   @Action getAllCustomers(): void {

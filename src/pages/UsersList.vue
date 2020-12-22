@@ -13,14 +13,14 @@
             :updateSearchPanel="updateSearchPanel"
           ></table-header-buttons>
         </v-card-title>
-        <Table
+        <UsersTable
           v-if="loading === false"
           :headers="headers"
           :items="items"
           :pagination="pagination"
           @edit="edit"
           @remove="remove"
-        ></Table>
+        ></UsersTable>
       </v-card>
     </v-flex>
     <search-panel
@@ -91,7 +91,7 @@
   </v-container>
 </template>
 <script lang="ts">
-import Table from "@/components/Table.vue";
+import UsersTable from "@/components/UsersTable.vue";
 import TableHeaderButtons from "@/components/TableHeaderButtons.vue";
 import SearchPanel from "@/components/SearchPanel.vue";
 import ConfirmDialog from "@/components/ConfirmDialog.vue";
@@ -109,7 +109,7 @@ import { appModule } from "@/store/modules/app";
 
 @Component({
   components: {
-    Table,
+    UsersTable,
     TableHeaderButtons,
     SearchPanel,
     ConfirmDialog
@@ -124,20 +124,14 @@ export default class CustomerList extends Vue {
   public search = "";
   public headers = [
     {
-      text: "",
-      value: "avatar",
-      sortable: false
-    },
-    {
-      text: "Имя",
+      text: "ID",
       left: true,
-      value: "firstname"
+      value: "id"
     },
-    { text: "Фамилия", value: "lastname" },
+    { text: "Имя", value: "name" },
     { text: "Email", value: "email" },
-    { text: "Телефон", value: "mobile" },
-    { text: "Reward", value: "rewards" },
-    { text: "Membership", value: "membership" },
+    { text: "Зарегистрирован", value: "created_at" },
+    { text: "Изменен", value: "updated_at" },
     { text: "", value: "actions", sortable: false }
   ];
   private searchFilter = {
@@ -249,9 +243,11 @@ export default class CustomerList extends Vue {
   }
 
   created() {
-    customerModule.getAllCustomers();
+    customerModule.getAllUsers();
   }
 
-  mounted() {}
+  mounted() {
+
+  }
 }
 </script>

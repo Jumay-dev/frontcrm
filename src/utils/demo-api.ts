@@ -44,6 +44,19 @@ function parseRequest(req: string) {
   return { model, id, exp, filters }
 }
 
+export function getFromLaravel(action: string): Promise<TODO> {
+  return new Promise(function(resolve, _reject) {
+    fetch(`http://127.0.0.1:8000/api/${action}`, {
+      method: 'POST'
+    })
+    .then( res => res.json() )
+    .then( res => {
+      if(res.success) {
+        resolve(res)
+      }
+    })
+  })
+}
 
 export function getData(action: string): Promise<TODO> {
   const { model, id, exp, filters } = parseRequest(action)
