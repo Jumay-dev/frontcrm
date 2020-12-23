@@ -132,6 +132,7 @@ export default class CustomerList extends Vue {
     { text: "Email", value: "email" },
     { text: "Зарегистрирован", value: "created_at" },
     { text: "Изменен", value: "updated_at" },
+    { text: "Роль", value: "role" },
     { text: "", value: "actions", sortable: false }
   ];
   private searchFilter = {
