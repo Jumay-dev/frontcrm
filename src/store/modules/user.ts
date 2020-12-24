@@ -39,7 +39,9 @@ class UserModule extends VuexModule implements UserState {
 
 
   get isSignedIn(): boolean {
+    console.log('is', this.user)
     return this.user.email && this.token ? true : false;
+    // return true
   }
 
   @Mutation

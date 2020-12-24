@@ -65,7 +65,7 @@ import { userModule } from "@/store/modules/user";
 
 @Component
 export default class Login extends Vue {
-  private email = "email@email.com";
+  private email = "admin@lara.ru";
   private pass = "102030Abc";
   private error = false;
   private text = "";
@@ -76,7 +76,9 @@ export default class Login extends Vue {
 
   public async login() {
     await userModule.signIn({ username: this.email, password: this.pass })
-    this.$router.push("/")
+    // this.$router.push("/")
+    // фикс с перезагрузкой, костыль, но работает
+    window.location.assign("/")
   }
 }
 </script>
